@@ -1,0 +1,121 @@
+// 색상 변수
+$primary-color: #4a90e2;
+$hover-color: darken($primary-color, 15%);
+$border-color: #ddd;
+$background-light: #f9fafc;
+$text-color: #333;
+$button-hover-shadow: rgba(0, 0, 0, 0.2);
+
+// 깜빡이는 애니메이션
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// 메인 레이아웃
+.main {
+  display: flex;
+  height: 100vh;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: $background-light;
+
+  // 사이드바
+  .aside {
+    width: 240px;
+    background-color: #fff;
+    border-right: 1px solid $border-color;
+    padding: 20px;
+
+    button {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background-color: #fff;
+      color: $text-color;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #fff;
+        border-color: $hover-color;
+        box-shadow: 0 2px 4px $button-hover-shadow;
+        color: $hover-color;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 8px 0;
+        padding: 10px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: lighten($primary-color, 40%);
+          color: $primary-color;
+        }
+
+        &.active {
+          background-color: $primary-color;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // 메인 콘텐츠 영역
+  .content {
+    flex: 1;
+    padding: 20px;
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+
+      button {
+        margin-left: 8px;
+        padding: 8px 12px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        background-color: #fff;
+        color: $text-color;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #fff;
+          border-color: $hover-color;
+          box-shadow: 0 2px 4px $button-hover-shadow;
+          color: $hover-color;
+        }
+      }
+    }
+
+    .ag-theme-quartz {
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .blink {
+        animation: blink 1s infinite;
+      }
+    }
+  }
+}
