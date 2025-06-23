@@ -5,7 +5,7 @@ import "../Header/Header.scss";
 const Header = () => {
   return (
     <div className="header">
-      <h2 className="title">연구중심병원 ERP</h2>
+      <h2 className="title">통합자산관리 ERP</h2>
     </div>
   );
 };
